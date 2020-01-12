@@ -1,7 +1,12 @@
+<link href="https://fonts.googleapis.com/css?family=Caveat|IM+Fell+Great+Primer+SC|Monda|Seymour+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <p>{{quote.description}}</p>
 <p>This quote will be valid for {{quote.completeDate|dateCount}} days</p>
-<button (click)= 'quoteComplete(true)'>Complete</button>
-<button (click)= 'quoteDelete(true)' class="btn btn-outline-danger">Delete Quote</button>
+<button (click)= 'quoteComplete(true)' class="btn btn-outline-info">Complete</button>
+<button (click)= 'quoteDelete(true)' class="btn btn-outline-danger">Delete Quote</button><br>
+<button id="display" class="btn btn-outline-success">like  <i class="fa fa-thumbs-up" style="font-size:36px"></i></button><span id="lk">131</span>
+<button id="dislike" class="btn btn-outline-success">Dislike  <i class="fa fa-thumbs-up" style="font-size:36px"></i></button><span id="dlk">24</span>
+
 <style>
   fieldset {
     text-align: center;
@@ -12,16 +17,34 @@
       border-radius: 10%;
       overflow: hidden;
       width: 130px;
-      height: 35px;
+      height: 50px;
+      margin: 1%;
+      color: black;
   }
-  .btn{background-color: crimson;}
+  /* .btn{background-color: crimson;} */
 
   ul>li {
     list-style: none;
-    font-size: 18px;
-    font-family: serif;
+    font-size: 30px;
+    font-family: 'Caveat', cursive;
   }
-  p{font-family:'Lucida Grande';
+  p{font-family: 'IM Fell Great Primer SC', serif;
   font-weight: bolder;
-font-size: 20px;}
+font-size: 26px;}
 </style>
+<script>
+  document.getElementById('display').addEventListener('click',()=>{like(1);});
+document.getElementById('dislike').addEventListener('click',()=>{like(0);});
+function like(lk) 
+{
+var likes, dlikes;
+
+
+likes=parseInt(document.getElementById('lk').innerText);
+dlikes=parseInt(document.getElementById('dlk').innerText);
+if(lk==1){likes++; dlikes--;} else{dlikes++; likes--;}
+if(likes<=0){likes=0;} if(dlikes<=0){dlikes=0;}
+document.getElementById('lk').innerText=likes;
+document.getElementById('dlk').innerText=dlikes;
+}
+</script>
