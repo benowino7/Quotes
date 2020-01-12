@@ -55,5 +55,6 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].showDescription = !this.quotes[index].showDescription
     // console.log(this.quotes[index].showDescription)
   }
+  
 }
 
