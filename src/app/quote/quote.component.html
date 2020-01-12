@@ -1,0 +1,53 @@
+<style>
+  fieldset {
+    text-align: center;
+    margin: 5%;
+  }
+  button{
+      background-color: skyblue;
+      border-radius: 10%;
+      overflow: hidden;
+      width: 130px;
+      height: 35px;
+  }
+  .li{
+    width: 70em;
+  }
+
+  ul>li {
+    background-color: aqua;
+    list-style: none;
+    font-size: 18px;
+    font-family: serif;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  p{font-family:'Lucida Grande';
+  font-weight: bolder;
+font-size: 20px;}
+</style>
+<fieldset>
+  <div class="container">
+    <h1>Amazing Tech Quotes</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="li">
+        <ul *ngFor='let quote of quotes;let i = index'>
+          <li appStrikethrough>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</li>
+          <button (click)='toggleDescription(i)' class="btn btn-primary">Toggle Details</button>
+          <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
+          </app-quote-detail>
+        </ul>
+      </div>
+        <div class="col-md-6">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+       </div>
+      </div>
+    </div>
+
+    <p *ngIf='quotes.length > 5'>You have too many quotes</p>
+  </div>
+
+</fieldset>

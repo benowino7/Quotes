@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+body{
+    background-color: silver;
+    text-align: center;
+    font-size: 18px;
+}
+body p{
+    color :white;
+}
