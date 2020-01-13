@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## BBD
+ the project will require the user to like or dislike quote, add quote and delet quote
+
+ ## Contributing
+```
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+firs fork , git clone the cloned repo to your machine, contribute the pull request back to the repository.
+```
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
