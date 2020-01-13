@@ -1,0 +1,11 @@
+<h1>Tech Amazing Quotes</h1>
+<ul>
+    <div *ngFor='let quote of quotes;let i = index'>
+        <li appStrikethrough>{{quote.name}}</li>
+        <button  (click)='toggleDetails(i)'>Toggle Details</button>
+
+    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'completeQuote($event,i)'></app-quote-details>
+    
+    </div>
+</ul>
+<p *ngIf='quotes.length > 5'>So many quotes</p>

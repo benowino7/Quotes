@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+body{
+    background-color: silver;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 0px;
+}
+body p{
+    color :black;
+    font-family: 'Monda', sans-serif;
+}
+ body p,li,ul,h1,h2,h3,h4,h5,h6,button{
+    overflow: hidden;
+} 
+
+/* font-family: 'Seymour One', sans-serif;
+font-family: 'IM Fell Great Primer SC', serif;
+font-family: 'Caveat', cursive;
+font-family: 'Monda', sans-serif; */

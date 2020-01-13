@@ -1,0 +1,52 @@
+<link href="https://fonts.googleapis.com/css?family=Caveat|IM+Fell+Great+Primer+SC|Monda|Seymour+One&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<p>{{quote.description}}</p>
+<p>This quote will be valid for {{quote.completeDate|dateCount}} days</p>
+<button (click)='quoteComplete(true)' class="btn btn-outline-info">Complete</button>
+<button (click)='quoteDelete(true)' class="btn btn-outline-danger">Delete</button><br>
+<button (click)='likeQuo()' id="display" class="btn btn-outline-success">like <i class="fa fa-thumbs-up"
+    style="font-size:36px"></i></button><span id="lk">0</span>
+    <button id="dislike" class="btn btn-outline-success">Dislike <i class="fa fa-thumbs-down"
+      style="font-size:36px"></i></button><span id="dlk">0</span>
+      
+<!-- <button id="display" class="btn btn-outline-success">like/unlike <i class="fa fa-arrow-right"></i></button> -->
+
+
+
+
+<style>
+  fieldset {
+    text-align: center;
+    margin: 5%;
+  }
+
+  /* #display{
+    width: 250px;
+    height: 80px;
+  } */
+  button {
+    font-family: 'Seymour One', sans-serif;
+    background-color: rgb(79, 146, 235);
+    border-radius: 10%;
+    overflow: hidden;
+    width: 180px;
+    height: 70px;
+    margin: 1%;
+    color: black;
+  }
+
+  /* .btn{background-color: crimson;} */
+
+  ul>li {
+    list-style: none;
+    font-size: 28px;
+    font-family: 'Caveat', cursive;
+  }
+
+  p {
+    font-family: 'Caveat', cursive;
+    font-weight: bolder;
+    font-size: 32px;
+  }
+</style>
