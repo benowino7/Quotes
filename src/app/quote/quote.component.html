@@ -1,3 +1,29 @@
+  <div class="animate"> Welcome<br>to</div> 
+<fieldset>
+  <div class="container">
+    <h1>Amazing Tech Quotes</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="li">
+        <ul *ngFor='let quote of quotes;let i = index'>
+          <li appStrikethrough>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</li>
+          <button (click)='toggleDescription(i)' class="btn btn-primary">Toggle Details</button>
+          <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
+          </app-quote-detail>
+        </ul>
+      </div>
+        <div class="col-md-6">
+        
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+       </div>
+      </div>
+    </div>
+
+    <!-- <p *ngIf='quotes.length > 5'>You have too many quotes</p> -->
+  </div>
+
+</fieldset>
 <style>
   fieldset {
     text-align: center;
@@ -28,31 +54,21 @@
     border-radius: 20px;
     padding: 10px;
   }
-  p{font-family:'Lucida Grande';
-  font-weight: bolder;
-font-size: 30px;}
+  .animate{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    padding-top: 28px;
+    margin: 1%;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    font-family: 'Caveat', cursive;;
+    margin-left: 2%;
+    background-color: aqua;
+    border-radius: 50%;
+    animation: bounce 6s alternate ease-in-out infinite;
+  }
+  @keyframes bounce{0%{transform: translateX(20px);}100%{transform: translateX(1650px);}} 
+  
 </style>
-<fieldset>
-  <div class="container">
-    <h1>Amazing Tech Quotes</h1>
-    <hr>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="li">
-        <ul *ngFor='let quote of quotes;let i = index'>
-          <li appStrikethrough>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</li>
-          <button (click)='toggleDescription(i)' class="btn btn-primary">Toggle Details</button>
-          <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
-          </app-quote-detail>
-        </ul>
-      </div>
-        <div class="col-md-6">
-            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-       </div>
-      </div>
-    </div>
-
-    <!-- <p *ngIf='quotes.length > 5'>You have too many quotes</p> -->
-  </div>
-
-</fieldset>
