@@ -34,6 +34,7 @@ export class QuoteDetailComponent implements OnInit {
       document.getElementById('dlk').innerText = dlikes;
     }
   }
+  
 
 
   ngOnInit() {
